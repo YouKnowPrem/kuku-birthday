@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Kuku 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,500&family=Noto+Sans+Oriya:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#7a1630;--rose:#e0476f;--gold:#f4a72a;--cream:#fff6e8;--ink:#3b1020}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+body.locked{overflow:hidden;height:100vh}
+section{position:relative;padding:clamp(56px,10vw,110px) 20px;text-align:center}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,48px);color:var(--maroon);margin-bottom:10px}
+.sub{opacity:.75;max-width:560px;margin:0 auto 34px;font-size:clamp(14px,3.6vw,17px)}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+
+/* ikat-style border strip, a nod to Sambalpuri weaves */
+.ikat{height:18px;background:
+ linear-gradient(135deg,var(--maroon) 25%,transparent 25%) -9px 0/18px 18px,
+ linear-gradient(225deg,var(--maroon) 25%,transparent 25%) -9px 0/18px 18px,
+ linear-gradient(315deg,var(--maroon) 25%,transparent 25%) 0 0/18px 18px,
+ linear-gradient(45deg,var(--maroon) 25%,var(--gold) 25%) 0 0/18px 18px}
+
+/* ---------- gate ---------- */
+#gate{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+ background:radial-gradient(circle at 50% 40%,#a3243f,#4a0b1d);color:#fff;text-align:center;padding:24px;transition:opacity .9s,visibility .9s}
+#gate.gone{opacity:0;visibility:hidden}
+#gate h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(40px,11vw,72px);line-height:1.1}
+#gate p{opacity:.85;font-size:clamp(14px,3.8vw,18px)}
+.gift{font-size:clamp(90px,26vw,140px);cursor:pointer;animation:wiggle 1.6s ease-in-out infinite;filter:drop-shadow(0 10px 30px rgba(0,0,0,.4));user-select:none}
+@keyframes wiggle{0%,100%{transform:rotate(0) scale(1)}20%{transform:rotate(-8deg) scale(1.05)}40%{transform:rotate(8deg) scale(1.05)}60%{transform:rotate(0) scale(1)}}
+.btn{border:0;cursor:pointer;font:600 16px Poppins;padding:14px 30px;border-radius:999px;background:var(--gold);color:var(--ink);box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s}
+.btn:active{transform:scale(.95)}
+
+/* ---------- hero ---------- */
+#hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ background:radial-gradient(circle at 50% 30%,#ffe3c2,var(--cream) 70%);overflow:hidden}
+.ring{position:relative;width:clamp(200px,58vw,290px);aspect-ratio:1;margin-bottom:26px}
+.ring::before{content:"";position:absolute;inset:-14px;border-radius:50%;
+ background:conic-gradient(var(--gold),var(--rose),var(--maroon),var(--gold),var(--rose),var(--gold));animation:spin 8s linear infinite}
+.ring img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:50%;border:6px solid var(--cream)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hb{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,5.5vw,30px);color:var(--rose)}
+.name{font-size:clamp(68px,20vw,150px);color:var(--maroon);line-height:1;margin:4px 0}
+.nick{font-size:clamp(16px,4.4vw,22px);font-weight:600}
+.odia{font-family:'Noto Sans Oriya',sans-serif;font-size:clamp(17px,4.8vw,24px);color:var(--maroon);margin-top:14px}
+.odia small{display:block;font-family:Poppins;font-size:13px;opacity:.6;margin-top:2px}
+.badge{display:inline-block;margin-top:26px;background:var(--maroon);color:#fff;border-radius:18px;padding:14px 22px;box-shadow:0 10px 30px rgba(122,22,48,.25)}
+.cd{display:flex;gap:14px;justify-content:center;margin-top:6px}
+.cd b{display:block;font-size:clamp(24px,7vw,34px);line-height:1}
+.cd span{font-size:11px;opacity:.75;text-transform:uppercase;letter-spacing:1px}
+.scroll{margin-top:30px;font-size:13px;opacity:.6;animation:bob 1.8s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+.float{position:absolute;pointer-events:none;font-size:26px;animation:rise linear infinite;opacity:.8;bottom:-60px}
+@keyframes rise{to{transform:translateY(-115vh) rotate(360deg)}}
+
+/* ---------- then & now ---------- */
+#then{background:#fff}
+.tn{display:flex;gap:clamp(14px,4vw,40px);justify-content:center;align-items:center;flex-wrap:wrap}
+.tn figure{width:min(42vw,250px)}
+.tn img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:20px;box-shadow:0 14px 34px rgba(0,0,0,.15)}
+.tn figcaption{margin-top:10px;font-weight:600;color:var(--maroon)}
+.arrow{font-size:34px;color:var(--rose)}
+
+/* ---------- gallery ---------- */
+#gallery{background:linear-gradient(#fff,#fde9ee)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(42vw,210px),1fr));gap:clamp(14px,3vw,26px);max-width:1000px;margin:0 auto}
+.pol{background:#fff;padding:10px 10px 14px;border-radius:6px;box-shadow:0 10px 26px rgba(0,0,0,.12);cursor:pointer;
+ transform:rotate(var(--r));transition:transform .35s}
+.pol:hover{transform:rotate(0) scale(1.04)}
+.pol img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px;display:block}
+.pol p{font-family:'Great Vibes',cursive;font-size:clamp(18px,4.6vw,22px);margin-top:6px;color:var(--maroon)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+.pol.reveal.in{transform:rotate(var(--r))}
+
+#lb{position:fixed;inset:0;z-index:40;background:rgba(30,5,12,.92);display:none;align-items:center;justify-content:center;padding:20px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:86vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#lb .x{position:absolute;top:16px;right:20px;color:#fff;font-size:34px;cursor:pointer;background:none;border:0}
+
+/* ---------- wishes ---------- */
+#wishes{background:var(--maroon);color:#fff}
+#wishes h2{color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:860px;margin:0 auto}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:10px 16px;border-radius:999px;font-size:clamp(13px,3.5vw,15px)}
+.chip b{color:var(--gold);margin-right:6px}
+
+/* ---------- cake ---------- */
+#cake{background:var(--cream)}
+.cakebox{position:relative;width:240px;height:230px;margin:30px auto 10px;cursor:pointer}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:14px 14px 10px 10px}
+.t1{bottom:0;width:230px;height:80px;background:linear-gradient(var(--rose),#b8304f)}
+.t2{bottom:72px;width:170px;height:66px;background:linear-gradient(#ffd7a8,var(--gold))}
+.t1::after,.t2::after{content:"";position:absolute;top:-4px;left:0;right:0;height:18px;border-radius:12px;
+ background:radial-gradient(circle at 10px 0,#fff 10px,transparent 11px) 0 0/22px 18px}
+.plate{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:270px;height:16px;border-radius:50%;background:#e8d6c4}
+.candle{position:absolute;bottom:138px;left:50%;transform:translateX(-50%);display:flex;gap:6px;
+ font:700 54px 'Playfair Display';color:var(--maroon);text-shadow:2px 2px 0 #fff}
+.flame{position:absolute;top:-30px;width:14px;height:24px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+ background:radial-gradient(circle at 50% 70%,#fff59d,#ff9800 60%,transparent 70%);animation:flick .15s infinite alternate;transition:opacity .3s}
+.flame.f1{left:9px}.flame.f2{right:9px}
+@keyframes flick{to{transform:scale(1.1,.92) rotate(3deg)}}
+.out .flame{opacity:0}
+#wish{min-height:28px;font-weight:600;color:var(--rose);margin-top:14px}
+
+/* ---------- letter ---------- */
+#letter{background:linear-gradient(#fde9ee,#fff6e8)}
+.paper{max-width:620px;margin:0 auto;background:#fff;border-radius:18px;padding:clamp(26px,6vw,48px);text-align:left;
+ box-shadow:0 18px 50px rgba(122,22,48,.12);line-height:1.8;font-size:clamp(15px,3.8vw,17px);border-top:6px solid var(--gold)}
+.paper .script{font-size:clamp(34px,8vw,44px);color:var(--maroon);line-height:1.2;margin-bottom:12px}
+.sign{text-align:right;margin-top:18px}
+.sign .script{font-size:34px}
+
+footer{background:var(--maroon);color:#fff;padding:34px 20px 40px;text-align:center;font-size:14px}
+footer .script{font-size:40px;color:var(--gold);display:block}
+
+#music{position:fixed;right:16px;bottom:16px;z-index:30;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;
+ background:var(--maroon);color:#fff;font-size:22px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#music.playing{animation:pulse 1.2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(224,71,111,.25)}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:45}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="locked">
+
+<div id="gate">
+  <div class="gift" id="giftBtn" role="button" aria-label="Open your gift">🎁</div>
+  <h1>Hey Kuku!</h1>
+  <p>Someone made something special for you…<br>turn your sound on 🔊 and tap the gift</p>
+  <button class="btn" id="openBtn">Open my surprise ✨</button>
+</div>
+<canvas id="confetti"></canvas>
+<button id="music" aria-label="Toggle music">🎵</button>
+
+<section id="hero">
+  <div class="ring"><img src="images/maroon-top.jpg" alt="Suizal"></div>
+  <div class="hb">Happy 18th Birthday</div>
+  <div class="name script">Suizal</div>
+  <div class="nick">a.k.a. our one and only <span style="color:var(--rose)">KUKU</span> 🤭💖</div>
+  <div class="odia">ଜନ୍ମଦିନର ଅନେକ ଅନେକ ଶୁଭେଚ୍ଛା 🌼<small>Many many happy returns of the day</small></div>
+  <div class="badge" id="badge"></div>
+  <div class="scroll">scroll down ↓</div>
+</section>
+<div class="ikat"></div>
+
+<section id="then">
+  <h2>Then &amp; Now</h2>
+  <p class="sub">From this tiny bundle in a blue hoodie… to the girl who lights up every photo 📸</p>
+  <div class="tn reveal">
+    <figure><img src="images/baby-kuku.jpg" alt="Baby Kuku"><figcaption>Little Kuku 👶</figcaption></figure>
+    <div class="arrow">➜</div>
+    <figure><img src="images/blue-flower.jpg" alt="Kuku now"><figcaption>18 &amp; glowing 🌺</figcaption></figure>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>The Kuku Album</h2>
+  <p class="sub">Tap any photo to see it big 💫</p>
+  <div class="grid" id="grid"></div>
+</section>
+<div class="ikat"></div>
+
+<section id="wishes">
+  <h2>18 Wishes for Your 18th</h2>
+  <p class="sub" style="opacity:.85">One for every year 🌸</p>
+  <div class="chips" id="chips"></div>
+</section>
+
+<section id="cake">
+  <h2>Make a Wish!</h2>
+  <p class="sub">Close your eyes, make a wish, then tap the candles to blow them out 🕯️</p>
+  <div class="cakebox" id="cakeBox" role="button" aria-label="Blow out the candles">
+    <div class="plate"></div><div class="tier t1"></div><div class="tier t2"></div>
+    <div class="candle"><span class="flame f1"></span>18<span class="flame f2"></span></div>
+  </div>
+  <div id="wish"></div>
+</section>
+
+<section id="letter">
+  <div class="paper reveal">
+    <div class="script">Dear Kuku,</div>
+    <p>Happy 18th birthday, Suizal! 🎂 Today is all about you — your smile, your laugh, and the way you make every ordinary day feel a little brighter.</p>
+    <p>Eighteen is a big one. I hope this year brings you new adventures, big dreams coming true, lots of rasagolas, and people around you who make you feel as special as you are.</p>
+    <p>Keep being exactly who you are — happy, bright and a little bit dramatic 🤭. Have the best day ever!</p>
+    <div class="sign">With lots of love,<br><span class="script">Prem</span></div>
+  </div>
+</section>
+
+<footer><span class="script">Happy Birthday, Kuku!</span>24 November · From Jammu to Odisha, with love 💛</footer>
+
+<div id="lb"><button class="x" aria-label="Close">×</button><img alt=""></div>
+
+<script>
+const PHOTOS=[
+ ["images/cake-smile.jpg","Cake & that smile 🎂"],["images/saree-thoughtful.jpg","Saree queen 👑"],["images/saree-peace.jpg","Peace ✌️"],
+ ["images/mirror-selfie-1.jpg","Mirror selfie mode"],["images/mirror-selfie-2.jpg","Too pretty 💫"],["images/red-kurta-pout.jpg","Pout game strong 😗"],
+ ["images/pink-kurta.jpg","Pretty in pink 🌸"],["images/mirror-selfie-3.jpg","Elegance ✨"],["images/maroon-top.jpg","Simply Kuku 💖"]];
+const WISHES=["Endless laughter","Big dreams coming true","Plates of rasagola","Puri beach sunsets","Good friends always","Fearless adventures","Sweet surprises","Peaceful nights","Exams that go great","Lots of dancing","Chhena poda cravings","Happy family days","Hugs on bad days","Courage for new things","Your favourite songs","Many selfies 📸","Fresh starts","A year as lovely as you"];
+
+const grid=document.getElementById('grid');
+PHOTOS.forEach(([src,cap],i)=>{const d=document.createElement('div');d.className='pol reveal';
+ d.style.setProperty('--r',((i%2?1:-1)*(1+Math.random()*3)).toFixed(1)+'deg');
+ d.innerHTML=`<img src="${src}" alt="${cap}" loading="lazy"><p>${cap}</p>`;d.onclick=()=>openLb(src);grid.appendChild(d)});
+const chips=document.getElementById('chips');
+WISHES.forEach((w,i)=>{const c=document.createElement('div');c.className='chip';c.innerHTML=`<b>${i+1}</b>${w}`;chips.appendChild(c)});
+
+const lb=document.getElementById('lb');
+function openLb(src){lb.querySelector('img').src=src;lb.classList.add('on')}
+lb.onclick=e=>{if(e.target.tagName!=='IMG')lb.classList.remove('on')};
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* floating marigolds & balloons */
+const hero=document.getElementById('hero');
+['🌼','🎈','💖','🌸','🎈','🌼','✨','🎈'].forEach((e,i)=>{const s=document.createElement('span');s.className='float';s.textContent=e;
+ s.style.left=(5+i*12)+'%';s.style.animationDuration=(9+Math.random()*7)+'s';s.style.animationDelay=(-Math.random()*12)+'s';hero.appendChild(s)});
+
+/* countdown / birthday badge (IST) */
+const BDAY=new Date('2026-11-24T00:00:00+05:30').getTime(),END=BDAY+864e5;
+const badge=document.getElementById('badge');
+function tick(){const now=Date.now();
+ if(now<BDAY){let t=Math.floor((BDAY-now)/1000);const h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;
+  badge.innerHTML=`Your birthday begins in<div class="cd"><div><b>${h}</b><span>hrs</span></div><div><b>${m}</b><span>min</span></div><div><b>${s}</b><span>sec</span></div></div>`}
+ else if(now<END) badge.innerHTML='🎉 It\'s your day! You\'re 18 today 🎉';
+ else badge.innerHTML='Born 24 · 11 · 2008 — officially 18 ✨';}
+tick();setInterval(tick,1000);
+
+/* confetti */
+const cv=document.getElementById('confetti'),cx=cv.getContext('2d');let parts=[],raf=null;
+function size(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio;cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+size();addEventListener('resize',size);
+const COLS=['#f4a72a','#e0476f','#7a1630','#ffd166','#ff8fab','#fff'];
+function burst(n=160){for(let i=0;i<n;i++)parts.push({x:innerWidth/2,y:innerHeight*.4,vx:(Math.random()-.5)*14,vy:Math.random()*-14-4,
+ s:5+Math.random()*6,c:COLS[i%COLS.length],r:Math.random()*6,vr:(Math.random()-.5)*.3,life:0});if(!raf)loop()}
+function loop(){cx.clearRect(0,0,innerWidth,innerHeight);
+ parts=parts.filter(p=>p.life<220&&p.y<innerHeight+20);
+ parts.forEach(p=>{p.vy+=.32;p.vx*=.985;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.life++;
+  cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore()});
+ raf=parts.length?requestAnimationFrame(loop):(cx.clearRect(0,0,innerWidth,innerHeight),null)}
+
+/* Happy Birthday tune — music-box synth (Web Audio) */
+let ac=null,master=null,playing=false,timer=null,nextT=0,idx=0;
+const N={F3:174.61,G3:196,C4:261.63,F4:349.23,G4:392,A4:440,B4:493.88,C5:523.25,D5:587.33,E5:659.25,F5:698.46,G5:783.99};
+const MEL=[['G4',.75],['G4',.25],['A4',1],['G4',1],['C5',1],['B4',2],
+ ['G4',.75],['G4',.25],['A4',1],['G4',1],['D5',1],['C5',2],
+ ['G4',.75],['G4',.25],['G5',1],['E5',1],['C5',1],['B4',1],['A4',2],
+ ['F5',.75],['F5',.25],['E5',1],['C5',1],['D5',1],['C5',2],[null,2]];
+const BASS=['C4','C4','G3','G3','C4','C4','F3','F3','C4','G3','C4','C4'];
+const BEAT=.52;
+function note(f,t,d,vol){const o=ac.createOscillator(),o2=ac.createOscillator(),g=ac.createGain();
+ o.type='sine';o2.type='triangle';o.frequency.value=f;o2.frequency.value=f*2;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.015);g.gain.exponentialRampToValueAtTime(.001,t+Math.max(d,.5)+.6);
+ const g2=ac.createGain();g2.gain.value=.25;o.connect(g);o2.connect(g2);g2.connect(g);g.connect(master);
+ o.start(t);o2.start(t);o.stop(t+d+1.3);o2.stop(t+d+1.3)}
+let beatPos=0;
+function schedule(){while(nextT<ac.currentTime+.6){const [n,b]=MEL[idx];
+  if(n)note(N[n],nextT,b*BEAT,.22);
+  /* bass on each bar downbeat (3/4, pickup offset) */
+  const bp=beatPos-1; if(bp>=0&&Math.abs(bp%3)<1e-6){const bar=Math.floor(bp/3)%BASS.length;note(N[BASS[bar]]/2,nextT,BEAT*2.5,.12)}
+  nextT+=b*BEAT;beatPos+=b;idx++;if(idx>=MEL.length){idx=0;beatPos=0}}}
+function startMusic(){try{if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.8;master.connect(ac.destination)}
+ ac.resume();nextT=ac.currentTime+.1;idx=0;beatPos=0;timer=setInterval(schedule,120);playing=true;mbtn.classList.add('playing');mbtn.textContent='🎵'}catch(e){}}
+function stopMusic(){clearInterval(timer);playing=false;mbtn.classList.remove('playing');mbtn.textContent='🔇';if(ac)ac.suspend()}
+const mbtn=document.getElementById('music');
+mbtn.onclick=()=>playing?stopMusic():startMusic();
+
+/* open gift */
+function openGift(){document.getElementById('gate').classList.add('gone');document.body.classList.remove('locked');startMusic();burst(200);setTimeout(()=>burst(120),700)}
+document.getElementById('giftBtn').onclick=openGift;document.getElementById('openBtn').onclick=openGift;
+
+/* blow candles */
+const cake=document.getElementById('cakeBox'),wish=document.getElementById('wish');
+cake.onclick=()=>{if(cake.classList.toggle('out')){wish.textContent='Yaaay! 🎉 Your wish is on its way, Kuku 💫';burst(220)}else wish.textContent='Candles relit — make another wish 😄'};
+</script>
+</body>
+</html>
